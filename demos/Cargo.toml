@@ -1,0 +1,38 @@
+[package]
+name = "demos"
+version = "1.0.0"
+edition = "2021"
+
+[dev-dependencies]
+criterion = "0.4"
+permutation_iterator = "0.1.2"
+rand = "0.8.5"
+
+[dependencies]
+quantization = { path = "../quantization" }
+rkm = "0.8.1"
+rand = "0.8.5"
+
+hdf5 = "0.8.1"
+ndarray = "0.15"
+reqwest = { version = "0.11.13", features = ["blocking"] }
+indicatif = "0.17.2"
+permutation_iterator = "0.1.2"
+clap = { version = "4.1.1", features = ["derive"] }
+num_cpus = "1.15.0"
+
+[[bin]]
+name = "basic"
+path = "src/basic.rs"
+
+[[bin]]
+name = "ann_benchmark"
+path = "src/ann_benchmark.rs"
+
+[[bench]]
+name = "encode"
+harness = false
+
+[[bench]]
+name = "pq"
+harness = false
